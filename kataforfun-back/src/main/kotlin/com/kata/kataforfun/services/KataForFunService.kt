@@ -16,6 +16,8 @@ class KataForFunService {
     		result.append("Kata")
     	}else if(inputNumber.toString().contains("5")){
     		result.append("For")
+    	}else if(inputNumber.toString().contains("7")){
+    		result.append("Fun")
     	}
 
         return result.toString().ifEmpty{
