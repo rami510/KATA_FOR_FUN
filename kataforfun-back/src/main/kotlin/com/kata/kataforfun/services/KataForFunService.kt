@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component
 class KataForFunService {
 
     fun convertNumber(inputNumber: Int): String {
-        return ""
+        return inputNumber.toString()
     }
 
 }
