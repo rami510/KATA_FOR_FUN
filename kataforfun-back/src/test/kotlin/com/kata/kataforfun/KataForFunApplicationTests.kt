@@ -1,7 +1,9 @@
 package com.kata.kataforfun
 
-import org.junit.jupiter.api.Test
+mport org.junit.jupiter.api.Test
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.springframework.boot.test.context.SpringBootTest
+import com.kata.foobarquix.services.KataForFunService
 
 @SpringBootTest
 class KataForFunApplicationTests {
@@ -9,5 +11,12 @@ class KataForFunApplicationTests {
     @Test
     fun contextLoads() {
     }
+	
+	val kataForFunService = KataForFunService()
+	
+	@Test
+	fun testKataForFunShouldReturn1() {
+		assertEquals("1",kataForFunService.convertNumber(1))
+	}
 
 }
