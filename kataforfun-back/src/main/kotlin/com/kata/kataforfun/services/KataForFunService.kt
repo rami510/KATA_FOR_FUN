@@ -6,24 +6,29 @@ import org.springframework.stereotype.Component
 class KataForFunService {
 
     fun convertNumber(inputNumber: Int): String {
-        val result = StringBuilder()
-    	if(inputNumber % 3 == 0){
-    		result.append("kata")
-    	}else if(inputNumber % 5 == 0){
-			result.append("For")
-		}
-    	if(inputNumber.toString().contains("3")){
-    		result.append("Kata")
-    	}else if(inputNumber.toString().contains("5")){
-    		result.append("For")
-    	}else if(inputNumber.toString().contains("7")){
-    		result.append("Fun")
-    	}
+       
+	   val result = StringBuilder()
+        val fooBarMap = mapOf(3 to "Kata", 5 to "For")
 
-        return result.toString().ifEmpty{
-	 		inputNumber.toString()
-	 	}
-		
+        fooBarMap.forEach { (key, value) ->
+            if (inputNumber % key == 0) {
+                result.append(value)
+            }
+        }
+        val fooBarQuixMap = fooBarMap + Pair(7,"Fun")
+        inputNumber.toString().forEach { digit ->
+            digit.toString().toIntOrNull()?.let { number ->
+                fooBarQuixMap[number]?.let { result.append(it) }
+            }
+        }
+
+        return if (result.isEmpty()) {
+            inputNumber.toString()
+        } else {
+            result.toString()
+        }
     }
 
 }
+
+
