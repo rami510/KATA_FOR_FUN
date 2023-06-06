@@ -1,4 +1,4 @@
-export interface ItemWithPath{
-    text: string;
-    path: string;
+export interface ItemWithPath {
+  text: string;
+  path: string;
 }

@@ -1,3 +1,3 @@
-export class Result{
-    result: string;
+export class Result {
+  result: string;
 }
